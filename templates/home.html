@@ -1,0 +1,3 @@
+{% if current_user.is_authenticated %}
+    Howdy {{ current_user.name }}! you have ${{ current_user.balance }}.
+{% endif %}

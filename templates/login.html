@@ -1,0 +1,23 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Oregon Trail Login</title>
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<link href="static/login.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="jumbotron vertical-center">
+    <div class="container">
+        <form class="form-signin" action="{{ url_for('login') }}" method="post">
+            <label for="pin" class="sr-only">PIN</label>
+			<input class="form-control input-lg" id="pin" type="number" name="pin" autocomplete="off" placeholder="PIN"/>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            {{ form.csrf_token }}
+        </form>
+    </div>
+        </div>
+    </body>
+</html>
