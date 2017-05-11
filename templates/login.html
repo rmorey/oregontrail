@@ -13,7 +13,7 @@
     <div class="container">
         <form class="form-signin" action="{{ url_for('login') }}" method="post">
             <label for="pin" class="sr-only">PIN</label>
-			<input class="form-control input-lg" id="pin" type="number" name="pin" autocomplete="off" placeholder="PIN"/>
+			<input style="text-align:center" class="form-control input-lg" id="pin" type="number" name="pin" autocomplete="off" placeholder="PIN"/>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             {{ form.csrf_token }}
         </form>

@@ -1,6 +1,6 @@
 import random
 
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_login import login_user, LoginManager, login_required
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -17,7 +17,7 @@ login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(userid):
-    return Family.query.filter(Family.id==userid).first()
+    return Family.get(int(userid))
 
 db = SQLAlchemy(app)
 
@@ -31,12 +31,15 @@ class Family(db.Model):
     occupation = db.Column(db.Integer, default=-1)
     pin = db.Column(db.Integer, unique=True)
 
+    @property
     def is_active(self):
         return True
 
+    @property
     def is_authenticated(self):
         return True
 
+    @property
     def is_anonymous(self):
         return False
 
@@ -51,6 +54,9 @@ class Family(db.Model):
             pin = random.randint(10000,99999)
         self.pin = pin
 
+    @classmethod
+    def get(famid):
+        return Family.query.filter_by(id=famid).first()
 
     def __repr__(self):
         return "<%s Family>" % self.name
@@ -61,7 +67,9 @@ def login():
     if form.validate_on_submit():
         fam = Family.query.filter_by(pin=form.pin.data).first()
         if fam:
+            print("login success")
             login_user(fam)
+            flash('Logged in successfully.')
             return redirect(url_for('home'))
         else:
             return redirect(url_for('login'))
