@@ -1,3 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+<style>
+p {
+    font-size: 50px;
+
+}
+</style>
+    </head>
+    <body style="font-family:serif">
 {% if current_user.is_authenticated %}
-    Howdy {{ current_user.name }}! you have ${{ current_user.balance }}.
+<div class="container">
+    <div class="jumbotron" style="width:100%">
+<h1 style="text-align:center" >Howdy {{ current_user.name }} Family! You have ${{ current_user.balance }}.</h1>
+    </div>
+<div class="text-center" >
+<h2 style="font-size:75px" >Your Supplies:</h2>
+    <p> {{ current_user.food }} food </p>
+    <p> {{ current_user.clothes }} clothes </p>
+    <p> {{ current_user.penicillin }} penicillin </p>
+    <p> {{ current_user.ox }} ox</p>
+    <p> {{ current_user.wheels }} wheels </p>
+    <p> {{ current_user.salts}} rehydration salts </p>
+</div>
+</div>
 {% endif %}
+    </body>
+</html>

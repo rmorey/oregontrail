@@ -1,0 +1,41 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE family (
+	id INTEGER NOT NULL, 
+	name VARCHAR(120), 
+	balance INTEGER, 
+	occupation INTEGER, 
+	food INTEGER, 
+	clothes INTEGER, 
+	wheels INTEGER, 
+	penicillin INTEGER, 
+	salts INTEGER, 
+	pin INTEGER, 
+	PRIMARY KEY (id), 
+	UNIQUE (name), 
+	UNIQUE (pin)
+);
+INSERT INTO "family" VALUES(1,'Cinco de Hunty',1600,NULL,0,0,0,0,0,19819);
+INSERT INTO "family" VALUES(2,'Dank Temes 2',1600,NULL,0,0,0,0,0,21390);
+INSERT INTO "family" VALUES(3,'HappyBirthdayMaya',1600,NULL,0,0,0,0,0,58229);
+INSERT INTO "family" VALUES(4,'Abernathy',1600,NULL,0,0,0,0,0,64309);
+INSERT INTO "family" VALUES(5,'Saeksman',1600,NULL,0,0,0,0,0,64040);
+INSERT INTO "family" VALUES(6,'Not Lame',1600,NULL,0,0,0,0,0,45610);
+INSERT INTO "family" VALUES(7,'The Dinner Party',1600,NULL,0,0,0,0,0,90579);
+INSERT INTO "family" VALUES(8,'Slav',1600,NULL,0,0,0,0,0,23372);
+INSERT INTO "family" VALUES(9,'Pitch Slap',1600,NULL,0,0,0,0,0,46812);
+INSERT INTO "family" VALUES(10,'Prarie Dawgs',1600,NULL,0,0,0,0,0,48986);
+INSERT INTO "family" VALUES(11,'Potatoes',1600,NULL,0,0,0,0,0,81989);
+INSERT INTO "family" VALUES(12,'La Horn-Picker',1600,NULL,0,0,0,0,0,93289);
+INSERT INTO "family" VALUES(13,'Ronner Party',1600,NULL,0,0,0,0,0,85516);
+INSERT INTO "family" VALUES(14,'Three Muskequeers',1600,NULL,0,0,0,0,0,50388);
+INSERT INTO "family" VALUES(15,'SASSmasters',1600,NULL,0,0,0,0,0,65410);
+INSERT INTO "family" VALUES(16,'Dis and Tary',1600,NULL,0,0,0,0,0,22098);
+INSERT INTO "family" VALUES(17,'Squirtle Squad',1600,NULL,0,0,0,0,0,20891);
+INSERT INTO "family" VALUES(18,'Selena y los Dinos',1600,NULL,0,0,0,0,0,98061);
+CREATE TABLE item (
+	id INTEGER NOT NULL, 
+	name VARCHAR(120), 
+	PRIMARY KEY (id)
+);
+COMMIT;
